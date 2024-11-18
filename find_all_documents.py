@@ -5,8 +5,8 @@ if client is not None:
     db = client["sample_mflix"]
     collection = db["users"]
 
-    cursor = collection.find()
+    cursor = collection.find().limit(5)
     for document in cursor:
-        print(document)
+        print(document['name'])
 
 client.close()
